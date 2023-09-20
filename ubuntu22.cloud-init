@@ -1,0 +1,59 @@
+#cloud-config
+autoinstall:
+  updates: security
+  version: 1
+  update: false
+  apt:
+    fallback: abort
+    geoip: true
+    mirror-selection:
+      primary:
+      - country-mirror
+      - arches:
+        - amd64
+        - i386
+        uri: http://archive.ubuntu.com/ubuntu
+      - arches:
+        - s390x
+        - arm64
+        - armhf
+        - powerpc
+        - ppc64el
+        - riscv64
+        uri: http://ports.ubuntu.com/ubuntu-ports
+    preserve_sources_list: false
+  codecs:
+    install: false
+  drivers:
+    install: false
+  identity:
+    hostname: <%= @host.name %>
+    password: <hashed-password>
+    username: <username>
+  kernel:
+    package: linux-generic
+  keyboard:
+    layout: pt
+    toggle: null
+    variant: ''
+  locale: en_US.UTF-8
+  network:
+    network:
+      version: 2
+      ethernets:
+        id0: 
+          dhcp4: true
+          match:
+            macaddress: '<%= @host.mac %>'
+          wakeonlan: true
+  source:
+    id: ubuntu-server
+    search_drivers: false
+  ssh:
+    allow-pw: false
+    install-server: true
+<%= @host.diskLayout %>
+  late-commands:
+  - wget -Y off <%= @static ? "'#{foreman_url('finish', static: 'true')}'" : foreman_url('finish') %> -O /target/tmp/finish.sh
+  - curtin in-target -- chmod +x /tmp/finish.sh
+  - curtin in-target -- /tmp/finish.sh

@@ -49,3 +49,28 @@
 * Association > Ubuntu22
 * Content: ubuntu22.grub2
 * Change content inside <> to match your setup
+
+## Kernel and Initrd
+
+Download Ubuntu ISO and extract kernel and initrd
+
+```wget https://releases.ubuntu.com/22.04.3/ubuntu-22.04.3-live-server-amd64.iso``` 
+
+```mkdir /mnt/ubuntu```
+
+```mkdir /var/lib/tftpboot/boot/ubuntu22```
+
+```mount ubuntu-22.04.3-live-server-amd64.iso /mnt/ubuntu```
+
+```cp /mnt/ubuntu22/casper/vmlinuz /var/lib/tftpboot/boot/ubuntu22/```
+
+```cp /mnt/ubuntu22/casper/initrd /var/lib/tftpboot/boot/ubuntu22/```
+
+## Make the ISO available in the network
+
+In my case I have different Operating Systems to provision with Foreman, for that I have a virtual machine with the intallation ISO's.
+
+```dnf install -y httpd```
+```systemctl enable --now httpd```
+```mkdir -p /var/www/html/pub/ubuntu22```
+```cp ubuntu-22.04.3-live-server-amd64.iso /var/www/html/pub/ubuntu22/```

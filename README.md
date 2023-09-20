@@ -15,7 +15,7 @@
 
 * Name: Ubuntu22
 * Major version: 22.04
-* Minor version: 05
+* Minor version: 3
 * Description Ubuntu 22.04
 * Family: Debian
 * Release Name: jammy

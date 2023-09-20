@@ -5,8 +5,6 @@
 
 ### Hosts > Installation Media > Create Medium
 
-|Field|Value|
-|:---:|:-----:|
 | Name | Ubuntu Mirror |
 | Path | http://archive.ubuntu.com/ubuntu |
 | Operating System Family | Debian |

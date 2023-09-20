@@ -1,0 +1,15 @@
+set timeout=5
+
+<% token_url = foreman_url('provision') -%>
+<% provision_url = token_url.gsub(/<foreman-fqdn>/, "<foreman-ip>") -%>
+
+loadfont unicode
+
+set menu_color_normal=white/black
+set menu_color_highlight=black/light-gray
+
+menuentry "Install Ubuntu Jammy (22.04)" {
+        set gfxpayload=keep
+        linux   boot/ubuntu22/vmlinuz ip=dhcp cloud-config-url=<%= provision_url%> url=http://<vm-images-ip>/pub/ubuntu22/ubuntu-22.04.3-live-server-amd64.iso autoinstall
+        initrd  boot/ubuntu22/initrd
+}

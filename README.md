@@ -29,7 +29,7 @@
 * Operating System Family: Debian
 * Association > Ubuntu22
 * Content: ubuntu22.ptable
-* Change content inside <> to match your setup
+* NOTE: only works for nvme disk. For sata replace 'nvme0n1' with 'sda'
 
 ## Create cloud-init tempalte
 
@@ -48,3 +48,4 @@
 * Type: Provisioning template
 * Association > Ubuntu22
 * Content: ubuntu22.grub2
+* Change content inside <> to match your setup

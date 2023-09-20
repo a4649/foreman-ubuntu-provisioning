@@ -3,12 +3,12 @@
 
 ## Create Installation media
 
-* Hosts > Installation Media > Create Medium
+### Hosts > Installation Media > Create Medium
 
 |Field|Value|
 |:---:|:-----:|
 | Name | Ubuntu Mirror |
-| Path | [3243 | 100 Mbps | 200 Mbps](http://archive.ubuntu.com/ubuntu) |
+| Path | http://archive.ubuntu.com/ubuntu |
 | Operating System Family | Debian |
 
 * Name: Ubuntu Mirror

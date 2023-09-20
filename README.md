@@ -3,7 +3,7 @@
 
 ## Create Installation media
 
-### Hosts > Installation Media > Create Medium
+#### Hosts > Installation Media > Create Medium
 
 * Name: Ubuntu Mirror
 * Path: http://archive.ubuntu.com/ubuntu

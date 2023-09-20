@@ -5,17 +5,14 @@
 
 ### Hosts > Installation Media > Create Medium
 
-| Name | Ubuntu Mirror |
-| Path | http://archive.ubuntu.com/ubuntu |
-| Operating System Family | Debian |
-
 * Name: Ubuntu Mirror
 * Path: http://archive.ubuntu.com/ubuntu
 * Operating System Family: Debian
 
 ## Create Operating System
 
-* Hosts > Operating Systems > Create Operating System
+### Hosts > Operating Systems > Create Operating System
+
 * Name: Ubuntu22
 * Major version: 22.04
 * Minor version: 05
